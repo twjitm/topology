@@ -446,7 +446,7 @@ public class LabelRenderer extends AbstractShapeRenderer {
               TransferData.putData(m_text, position);
             // this.notify();
               String path=m_text.replaceAll("/", "");
-              writeFile(path, position);
+             // writeFile(path, position);
                  
         	 //	 String hql="";
         ///	 if ("".equals(returnde_na)) {//layout表中没有这个device_name

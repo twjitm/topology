@@ -1,96 +1,49 @@
 package prefuse.safein.demo;
 
 
-
-import java.awt.Shape;
-import java.awt.Window;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RectangularShape;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Stack;
-
-import javax.swing.JFrame;
-
 import org.apache.demo.LayoutTabUtils.AutoPanAction;
 import org.apache.demo.LayoutTabUtils.MyFocusControl;
-import org.apache.demo.LayoutTabUtils.TreeRootAction;
-
 import prefuse.Constants;
 import prefuse.Display;
 import prefuse.Visualization;
 import prefuse.action.ActionList;
 import prefuse.action.GroupAction;
 import prefuse.action.RepaintAction;
-import prefuse.action.animate.ColorAnimator;
-import prefuse.action.animate.LocationAnimator;
-import prefuse.action.animate.PolarLocationAnimator;
-import prefuse.action.animate.QualityControlAnimator;
-import prefuse.action.animate.VisibilityAnimator;
+import prefuse.action.animate.*;
 import prefuse.action.assignment.ColorAction;
 import prefuse.action.assignment.DataColorAction;
 import prefuse.action.assignment.FontAction;
 import prefuse.action.filter.FisheyeTreeFilter;
-import prefuse.action.filter.GraphDistanceFilter;
-import prefuse.action.layout.CircleLayout;
-import prefuse.action.layout.CollapsedStackLayout;
-import prefuse.action.layout.CollapsedSubtreeLayout;
+import prefuse.action.layout.*;
 import prefuse.action.layout.GridLayout;
-import prefuse.action.layout.Layout;
-import prefuse.action.layout.RandomLayout;
 import prefuse.action.layout.graph.ForceDirectedLayout;
 import prefuse.action.layout.graph.FruchtermanReingoldLayout;
 import prefuse.action.layout.graph.NodeLinkTreeLayout;
 import prefuse.action.layout.graph.RadialTreeLayout;
-import prefuse.action.layout.graph.SquarifiedTreeMapLayout;
-import prefuse.action.layout.graph.TreeLayout;
 import prefuse.activity.Activity;
 import prefuse.activity.SlowInSlowOutPacer;
-import prefuse.activity.ThereAndBackPacer;
-import prefuse.controls.DragControl;
-import prefuse.controls.FocusControl;
-import prefuse.controls.NeighborHighlightControl;
-import prefuse.controls.PanControl;
-import prefuse.controls.WheelZoomControl;
-import prefuse.controls.ZoomControl;
-import prefuse.controls.ZoomToFitControl;
-import prefuse.data.Edge;
+import prefuse.controls.*;
 import prefuse.data.Graph;
 import prefuse.data.Node;
 import prefuse.data.Table;
-import prefuse.data.Tree;
 import prefuse.data.tuple.TupleSet;
 import prefuse.render.DefaultRendererFactory;
 import prefuse.render.EdgeRenderer;
 import prefuse.render.LabelRenderer;
 import prefuse.util.ColorLib;
 import prefuse.util.FontLib;
-import prefuse.util.GraphicsLib;
-import prefuse.util.PrefuseConfig;
-import prefuse.util.display.DisplayLib;
-import prefuse.util.force.DragForce;
-import prefuse.util.force.ForceItem;
-import prefuse.util.force.ForceSimulator;
-import prefuse.util.force.NBodyForce;
-import prefuse.util.force.SpringForce;
-import prefuse.visual.NodeItem;
-import prefuse.visual.VisualGraph;
+import prefuse.util.force.*;
 import prefuse.visual.VisualItem;
 import prefuse.visual.sort.TreeDepthItemSorter;
-import sun.misc.Lock;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.RectangularShape;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class TopologyPosition{
 	private static JFrame frame;    
@@ -116,8 +69,8 @@ public class TopologyPosition{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		Map<String, Object>map=scend(nodes, edges, layoutType);
-		return map;
+	//	Map<String, Object>map=scend(nodes, edges, layoutType);
+		return null;
 	}
 	private static Map<String, Object> scend(Map<String, Integer> nodes2, List<String> edges2,int layoutType) {
 		Map<String, Object> map= getTopoloPositionMap(nodes2, edges2, layoutType);
